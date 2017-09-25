@@ -11,4 +11,4 @@ COPY bank.py /bank.py
 EXPOSE 5000
 
 # this is terrible
-CMD ["python", "-u", "redeye.py"]
+CMD ["python", "-u", "bank.py"]
