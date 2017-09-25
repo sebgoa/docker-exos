@@ -1,0 +1,17 @@
+version: '3'
+services:
+  webapp:
+    image: webapp
+    ports:
+      - 5000:5000
+    networks:
+      - foobar
+  redis:
+    image: redis
+    ports:
+      - 6379
+    networks:
+      - foobar
+networks:
+  foobar:
+  
