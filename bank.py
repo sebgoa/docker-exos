@@ -14,12 +14,15 @@ def hello_world():
 @app.route('/bank/<name>')
 def super_marketing(name):
     result = "bank for %s" % name
-    r.set('bank',name) 
+    r.sadd('bank',name) 
     return result 
 
-@app.route('/get/')
+@app.route('/get')
 def get_keys():
-    return r.get('bank')
+    res = ""
+    for bank in r.smembers('bank'):
+        res = res + ' ' + bank
+    return res
 
 if __name__ == "__main__":
     app.run('0.0.0.0')
