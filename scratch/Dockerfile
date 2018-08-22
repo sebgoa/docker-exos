@@ -1,5 +1,5 @@
 FROM scratch
 
-ADD hello /hello
+COPY hello-linux /
 
-CMD ['/hello']
+ENTRYPOINT ["/hello-linux"]
