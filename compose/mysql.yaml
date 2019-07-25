@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+   db:
+     image: mysql:5.5
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     secrets:
+       - source: password 
+         target: /tmp/password
+     environment:
+       MYSQL_ROOT_PASSWORD_FILE: /tmp/password
+
+volumes:
+    db_data:
+secrets:
+  password:
+    file: ./password.txt
