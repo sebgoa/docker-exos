@@ -1,5 +1,5 @@
 FROM scratch
 
-COPY hello-linux /
+COPY hello /
 
-ENTRYPOINT ["/hello-linux"]
+ENTRYPOINT ["/hello"]
