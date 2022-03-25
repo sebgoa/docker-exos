@@ -4,14 +4,7 @@
 docker build -t webapp .
 ```
 
-## With Link
-
-```
-docker run -d --name redis -p 6379:6379 redis
-docker run -d --link redis -p 5000:5000 webapp
-```
-
-## Without links, using networks
+## Network and start containers
 
 By default, creates network of type bridge
 
